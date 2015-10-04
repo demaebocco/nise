@@ -1,9 +1,9 @@
 <div class="container">
-  <form name="device" novalidate>
+  <form name="device" ng-submit="vm.enterDevice()" novalidate>
     <div class="input-group">
       <input type="text" class="form-control" ng-model="vm.deviceName" ng-required placeholder="利用するデバイス名を入力してください">
       <span class="input-group-btn">
-        <button type="button" class="btn btn-primary" ng-click="vm.enterDevice()">入室</button>
+        <button type="submit" class="btn btn-primary">入室</button>
       </span>
     </div>
   </form>
