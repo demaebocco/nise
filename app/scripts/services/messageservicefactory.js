@@ -12,6 +12,7 @@ angular.module('niseApp')
     var MessageService = function (name) {
       var dataStore = this.dataStore_ = milkCocoaFactory.getDatastore(name);
       var messages = this.messages_ = [];
+      messages.deviceName = name;
 
       dataStore.on('send', function (data) {
         var message = {
@@ -24,6 +25,10 @@ angular.module('niseApp')
           messages.unshift(message);
         });
       });
+    };
+
+    MessageService.prototype.getDevice = function () {
+      return this.deviceName;
     };
 
     MessageService.prototype.get = function () {
