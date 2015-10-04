@@ -405,6 +405,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: '<%= yeoman.dist %>/',
+        message: 'updated',
+        dotfiles: true
+      },
+      src: '**/*'
     }
   });
 
@@ -454,6 +463,11 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'gh-pages'
   ]);
 
   grunt.registerTask('default', [
