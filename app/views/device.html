@@ -8,6 +8,7 @@
   <div class="list-group">
     <div class="list-group-item" ng-class="{'list-group-item-success': message.mine}" ng-repeat="message in vm.messages">
       {{message.text}}
+      <span ng-show="message.mine">(あなたの投稿)</span>
     </div>
   </div>
 </div>
