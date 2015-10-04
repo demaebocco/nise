@@ -8,10 +8,13 @@
  * Controller of the niseApp
  */
 angular.module('niseApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($location, $route) {
+    var vm = this;
+
+    vm.deviceName = '';
+    vm.enterDevice = function () {
+      var url = '/device/' + vm.deviceName;
+      $location.path(url);
+      $route.reload();
+    };
   });

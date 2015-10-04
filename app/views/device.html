@@ -1,0 +1,13 @@
+<div>
+  <div class="input-group">
+    <input type="text" class="form-control" ng-model="vm.message" ng-required placeholder="メッセージを入力してください">
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-primary" ng-click="vm.send()">投稿</button>
+    </span>
+  </div>
+  <div class="list-group">
+    <div class="list-group-item list-group-item-success" ng-repeat="message in vm.messages">
+      {{message.text}}
+    </div>
+  </div>
+</div>
