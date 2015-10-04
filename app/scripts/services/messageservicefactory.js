@@ -13,7 +13,7 @@ angular.module('niseApp')
       var dataStore = this.dataStore_ = milkCocoaFactory.getDatastore(name);
       var messages = this.messages_ = [];
 
-      dataStore.on('push', function (data) {
+      dataStore.on('send', function (data) {
         var message = {
           text: data.value.text,
           sender: data.value.sender,
@@ -32,7 +32,7 @@ angular.module('niseApp')
 
     MessageService.prototype.send = function (text) {
       var message = {text: text, sender: senderId};
-      this.dataStore_.push(message);
+      this.dataStore_.send(message);
     };
 
     return {
