@@ -1,4 +1,21 @@
 <div class="container">
+  <article>
+    <h4>ニセ Bocco</h4>
+    <p>
+      Bocco や電話注文を受け付ける店舗の偽の実装です。DemaeBocco から届いたメッセージがテキストのまま表示されます。返答はテキストボックスに入力してください。応答性がいいため、システムのテストの時に効果を発揮します。
+    </p>
+    <p>
+      デバイス名は、Bocco の場合は # で、店舗の場合は @ とするルールでおねがいします。
+    </p>
+    <ul>
+      <li><a href="#/device/%23Bocco%E3%81%95%E3%81%8F%E3%82%89%E3%83%8F%E3%82%A6%E3%82%B9">#Boccoさくらハウス</a></li>
+      <li><a href="#/device/%23Bocco%E6%94%BF%E5%80%89">#Bocco政倉</a></li>
+      <li><a href="#/device/%23Bocco%E5%8F%A4%E5%B7%9D">#Bocco古川</a></li>
+      <li><a href="#/device/%23Bocco%E3%81%BE%E3%81%95%E3%81%8F%E3%82%89">#Bocco平崎</a></li>
+      <li><a href="#/device/%23Bocco%E3%81%BE%E3%81%95%E3%81%8F%E3%82%89">#Bocco中窪</a></li>
+      <li><a href="#/device/@%E9%8A%80%E3%81%AE%E3%81%95%E3%82%89%E5%AE%87%E5%AE%BF%E5%BA%97">@銀のさら宇宿店</a>
+    </ul>
+  </article>
   <form name="device" ng-submit="vm.enterDevice()">
     <div class="input-group">
       <input type="text" class="form-control" required ng-model="vm.deviceName"  placeholder="利用するデバイス名を入力してください">
