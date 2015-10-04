@@ -8,14 +8,20 @@
  * Factory in the niseApp.
  */
 angular.module('niseApp')
-  .factory('messageServiceFactory', function ($rootScope, milkCocoaFactory) {
+  .factory('messageServiceFactory', function ($rootScope, milkCocoaFactory, senderId) {
     var MessageService = function (name) {
       var dataStore = this.dataStore_ = milkCocoaFactory.getDatastore(name);
       var messages = this.messages_ = [];
 
       dataStore.on('push', function (data) {
+        var message = {
+          text: data.value.text,
+          sender: data.value.sender,
+          mine: data.value.sender === senderId
+        };
+
         $rootScope.$apply(function () {
-          messages.push(data.value);
+          messages.push(message);
         });
       });
     };
@@ -25,7 +31,7 @@ angular.module('niseApp')
     };
 
     MessageService.prototype.send = function (text) {
-      var message = {text: text};
+      var message = {text: text, sender: senderId};
       this.dataStore_.push(message);
     };
 

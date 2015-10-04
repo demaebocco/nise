@@ -6,7 +6,7 @@
     </span>
   </div>
   <div class="list-group">
-    <div class="list-group-item list-group-item-success" ng-repeat="message in vm.messages">
+    <div class="list-group-item" ng-class="{'list-group-item-success': message.mine}" ng-repeat="message in vm.messages">
       {{message.text}}
     </div>
   </div>
