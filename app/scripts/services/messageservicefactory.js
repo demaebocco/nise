@@ -21,7 +21,7 @@ angular.module('niseApp')
         };
 
         $rootScope.$apply(function () {
-          messages.push(message);
+          messages.unshift(message);
         });
       });
     };
